@@ -1,0 +1,23 @@
+spring: 
+    profiles:
+        active: development
+
+---
+spring: 
+    profiles: development
+    jpa:
+        show_sql: true
+        database: POSTGRESQL
+        generate-ddl: true
+    datasource: 
+        url: jdbc:postgresql://localhost:5432/customer_dev
+        username: postgres
+        password: 
+---
+spring: 
+    profiles: test
+    jpa:
+        show_sql: true 
+        database: H2
+    datasource: 
+        url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
